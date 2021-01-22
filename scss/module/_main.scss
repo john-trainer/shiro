@@ -1,0 +1,27 @@
+// メインコンテンツのスタイル
+
+@use '../global/config';
+@use '../global/mixin';
+
+.main {
+    max-width: 100%;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+// メディアクエリ
+// 0~
+@include mixin.mq(xs) {
+    .container {
+        max-width: 90%;
+    }
+}
+// 992~
+@include mixin.mq(lg) {
+    .container {
+        max-width: config.$contents--max-width;
+    }
+}

@@ -1,0 +1,13 @@
+// フッターのスタイル
+
+@use '../global/config';
+@use '../global/mixin';
+
+.footer {
+    text-align: center;
+    padding: 12px 0
+}
+.copy-right {
+    @include mixin.fz(16);
+    color: config.$color-text;
+}

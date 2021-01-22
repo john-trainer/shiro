@@ -1,0 +1,21 @@
+{
+  "name": "shiro_copy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-compile:css": "sass scss/style.scss css/style.css --style expanded --watch | postcss --use autoprefixer -b 'last 10 versions' css/style.css -o css/style.css",
+    "pro-compile:css": "sass scss/style.scss css/style.css --style compressed | postcss --use autoprefixer -b 'last 10 versions' css/style.css -o css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.1",
+    "fibers": "^5.0.0",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.4"
+  }
+}

@@ -1,0 +1,9 @@
+// 共通スタイルを記述
+
+@use '../global/config';
+@use '../global/mixin';
+
+// tag
+body {
+    font-family: config.$font-family;
+}

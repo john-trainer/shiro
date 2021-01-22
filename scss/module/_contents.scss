@@ -1,0 +1,357 @@
+// コンテンツのスタイル
+
+@use '../global/config';
+@use '../global/mixin';
+
+// 共通
+.contact {
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    padding: 80px calc(50vw - 50%) 0;
+    background-image: url(../../images/contact_us.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.content-heading {
+    &__ttl {
+        text-align: center;
+        &::after {
+            content: '';
+            display: block;
+            height: 1px;
+            background-color: currentColor;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+    }
+    &.bg-accent {
+        background-color: config.$color-accent--bg;
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw);
+        padding-right: calc(50vw - 50%);
+        padding-left: calc(50vw - 50%);
+    }
+}
+.img-wrapper {
+    width: 100%;
+}
+.content-body {
+    width: 100%;
+}
+.content-img {
+    width: 100%;
+    height: auto;
+}
+.design-el {
+    width: 100vw;
+    background-color: config.$color-accent--bg;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    margin-bottom: 0;
+}
+.media {
+    width: 100%;
+}
+.media-content {
+    width: 100%;
+
+    &--florist {
+        margin-top: 12px;
+    }
+    &__txt {
+        @include mixin.fz(16);
+    }
+}
+.info-list {
+    @include mixin.fz(16);
+    &:not(:last-child) {
+        padding-bottom: 12px;
+    }
+}
+.btn-wrapper {
+    text-align: center;
+}
+.contact-btn {
+    background-color: config.$color-main;
+    border: 1px solid config.$color-accent--border;
+    cursor: pointer;
+}
+.icon-contact {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    border: 1px solid config.$color-accent--border;
+    margin-right: 1.2em;
+    vertical-align: middle;
+    transform: translateY(-0.05em);
+    position: relative;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 21px;
+        height: 21px;
+        border-right: 1px solid config.$color-accent--border;
+        border-bottom: 1px solid config.$color-accent--border;
+        position: absolute;
+        top: -10px;
+        right: 3.6px;
+        transform: rotate(45deg);
+    }
+}
+// メディアクエリ
+// 0~
+@include mixin.mq(xs) {
+    .content {
+        padding-top: 32px;
+
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+    .content-heading {
+        margin-bottom: 20px;
+
+        &__ttl {
+            @include mixin.fz(26);
+    
+            &::after {
+                width: 36px;
+                margin-top: 12px;
+                margin-bottom: 24px;
+            }
+        }
+        &__txt {
+            @include mixin.fz(16);
+            text-align: left;
+        }
+        &.bg-accent {
+            padding-top: 32px;
+            padding-bottom: 30px;
+        }
+    }
+    .img-wrapper {
+        &--concept {
+            height: auto;
+        }
+        &--work {
+            height: 240px;
+        }
+    }
+    .content-img {
+        height: 100%;
+        object-fit: cover;
+    }
+    .design-el {
+        height: 100px;
+        margin-top: -60px;
+    }
+    .media:not(:last-of-type) {
+        margin-bottom: 16px;
+    }
+    .media-content {
+        &--work {
+            margin-top: 8px;
+        }
+        &__ttl {
+            @include mixin.fz(22);
+        }
+        &__txt {
+            line-height: 1.5;
+        }
+    }
+    .info-lists {
+        margin-top: 16px;
+    }
+    .info-list {
+        &__ttl {
+            border-bottom: 1px solid config.$color-accent--border;
+            margin-bottom: 4px;
+        }
+    }
+    .contact-btn {
+        @include mixin.fz(18);
+        margin-bottom: 40px;
+        padding: 20px 56px;
+    }
+    .sp-none {
+        display: none;
+    }
+}
+
+// 768~
+@include mixin.mq(md) {
+    .content {
+        padding-top: 48px;
+
+        &:not(:last-child) {
+            margin-bottom: 56px;
+        }
+    }
+    .content-heading {
+        margin-bottom: 30px;
+
+        &__ttl {
+            @include mixin.fz(30);
+        }
+        &__txt {
+            @include mixin.fz(18);
+            text-align: center;
+        }
+        &.bg-accent {
+            padding-top: 80px;
+            padding-bottom: 143px;
+        }
+    }
+    .content-body {
+        &.negative-mt {
+            margin-top: -90px;
+        }
+    }
+    .design-el {
+        height: 160px;
+        margin-top: -80px;
+    }
+    .media-content {
+        &--work {
+            margin-top: 12px;
+        }
+        &__ttl {
+            @include mixin.fz(24);
+        }
+    }
+    .sp-none {
+        display: block;
+    }
+}
+
+// 992~
+@include mixin.mq(lg) {
+    .content {
+        padding-top: 80px;
+
+        &.work {
+            padding-bottom: 100px;
+        }
+        &.florist {
+            padding-top: 0;
+            padding-bottom: 40px;
+        }
+        &.shop {
+            padding-bottom: 120px;
+        }
+    }
+    .content-heading {
+        margin-bottom: 40px;
+
+        &__ttl {
+            @include mixin.fz(36);
+    
+            &::after {
+                width: 40px;
+                margin-top: 24px;
+                margin-bottom: 32px;
+            }
+        }
+        &__txt {
+            @include mixin.fz(22);
+        }
+        &.bg-accent {
+            margin-bottom: 0;
+        }
+    }
+    .img-wrapper {
+        &--concept {
+            height: 400px;
+        }
+        &--shop-info {
+            width: calc(100% / 2 - 24px);
+            margin-right: 48px;
+        }
+    }
+    .design-el {
+        height: 240px;
+        margin-top: -140px;
+    }
+    .content-body {
+        &--grid {
+            display: grid;
+            grid-template-rows: 120px, 300px, 140px, 80px, 110px, 140px, 80px, 300px, 120px, 140px;
+            grid-template-columns: 420px, 420px;
+            gap: 0 40px;
+        }
+        &--flex {
+            display: flex;
+        }
+    }
+    .grid-item01 {
+        grid-row: 1 / 4;
+        grid-column: 1 / 2;
+    }
+    .grid-item02 {
+        grid-row: 2 / 7;
+        grid-column: 3 / 4;
+    }
+    .grid-item03 {
+        grid-row: 5 / 10;
+        grid-column: 1 / 2;
+    }
+    .grid-item04 {
+        grid-row: 8 / 11;
+        grid-column: 3 / 4;
+    }
+    .media {
+        &.flex-col3 {
+            width: calc(100% / 3 - 15px);
+        
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+    .media-content {
+        &--work {
+            margin-top: 16px;
+        }
+        &__txt {
+            line-height: 1.75;
+        }
+    }
+    .info-lists {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% / 2 - 24px);
+    }
+    .info-list {
+        display: flex;
+
+        &__ttl {
+            width: 20%;
+            border-bottom: none;
+            margin-bottom: 0;
+            margin-left: 40px;
+        }
+        &__txt {
+            width: 80%;
+            padding-left: 16px;
+            padding-bottom: 19px;
+            line-height: 1.375;
+            border-left: 1px solid config.$color-accent--border;
+        }
+    }
+    .contact-btn {
+        @include mixin.fz(20);
+        margin-bottom: 100px;
+        padding: 30px 107px;
+    }
+}
+
+// 1200~
+@include mixin.mq(xl) {
+    .content-body {
+        &--grid {
+            gap: 0 60px;
+        }
+    }
+}
