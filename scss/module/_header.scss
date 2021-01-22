@@ -54,7 +54,6 @@
 
     &__logo {
         color: config.$color-main;
-        @include mixin.fz(36);
     }
 }
 // スクロールに応じてメニューバーを上部に固定
@@ -126,31 +125,48 @@
 // メディアクエリ
 // 0~
 @include mixin.mq(xs) {
-    .header-heading__logo {
-        @include mixin.fz(28);
+    .header-body {
+        &__ttl {
+            @include mixin.fz(80);
+        }
     }
-    .header-body__ttl {
-        @include mixin.fz(80);
+    .header-heading {
+        &__logo {
+            @include mixin.fz(28);
+        }
     }
-    .menu-btn__bar {
-        width: 24px;
-
-        &::before, &::after {
+    .menu-btn {
+        &__bar {
             width: 24px;
+
+            &::before, &::after {
+                width: 24px;
+            }
+        }
+    }
+}
+// 768~
+@include mixin.mq(md) {
+    .header-heading {
+        &__logo {
+            @include mixin.fz(36);
         }
     }
 }
 // 992~
 @include mixin.mq(lg) {
-    .header-body__ttl {
-        @include mixin.fz(120);
-    }
-    .menu-btn__bar {
-        width: 32px;
-    
-        &::before, &::after {
-            width: 32px;
+    .header-body {
+        &__ttl {
+            @include mixin.fz(120);
         }
     }
-
+    .menu-btn {
+        &__bar {
+            width: 32px;
+    
+            &::before, &::after {
+                width: 32px;
+            }
+        }
+    }
 }
